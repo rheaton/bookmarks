@@ -48,11 +48,9 @@ app.get('/bookmarks/new', bookmarksRoute.new);
 app.post('/bookmarks', bookmarksRoute.create);
 
 
-if ('development' == app.get('env')) {
-  mongoose.connect('mongodb://127.0.0.1:27017');
-} else {
-  mongoose.connect(process.env.MONGOLAB_URI);
-}
+var mongoURI = process.env.MONGOLAB_URI || 'mongodb://127.0.0.1:27017';
+mongoose.connect(mongoURI);
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
