@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  h2 Bookmarks
+  p A list of your saved bookmarks
+
+  - if(bookmarks.length == 0)
+    p.de-em No bookmarks added. Create one 
+      a(href="/bookmarks/new") here
+  - else
+    ul
+      - for bookmark in bookmarks
+        - if(bookmark.url)
+          li
+            - name = bookmark.name || bookmark.url
+            a(href="#{bookmark.url}", target='_blank')= name

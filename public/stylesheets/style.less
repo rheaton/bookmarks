@@ -1,0 +1,77 @@
+.clearfix() {
+  zoom:1;
+  &:before, &:after{ content:""; display:table; }
+  &:after{ clear: both; }
+}
+
+@blue: #00B7FF;
+@darkBlue: #3366FF;
+@gray: #989898;
+
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1 { 
+  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-weight: normal;
+}
+h2 {
+  font-weight: normal;
+}
+
+a {
+  color: @blue;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.bookmark-nav-list {
+  .clearfix;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 3em;
+}
+.bookmark-nav-list > li {
+  float: left;
+  margin-right: 1em;
+  display: inline-block;
+  background-color: @blue;
+  padding: 0.25em 0.8em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+.bookmark-nav-list > li:hover {
+  background-color: @darkBlue;
+}
+
+.bookmark-nav-list > li.current,
+.bookmark-nav-list > li.current:hover {
+  background-color: @gray;
+}
+
+.bookmark-nav-list a {
+  color: inherit;
+}
+.bookmark-nav-list a:hover {
+  text-decoration: none;
+}
+
+.form-control-group {
+  .clearfix;
+}
+.form-control-group > label {
+  width: 80px;
+  display: inline-block;
+}
+
+.de-em {
+  color: gray;
+}

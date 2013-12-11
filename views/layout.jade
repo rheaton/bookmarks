@@ -1,0 +1,14 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h1 Bookmark App in Node.js
+    nav.bookmark-nav
+      ul.bookmark-nav-list
+        != navLink("/", "Home", current)
+        != navLink("/bookmarks", "Bookmarks", current)
+        != navLink("/bookmarks/new", "New bookmark", current)
+
+    block content
